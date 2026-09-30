@@ -49,11 +49,19 @@ export default function PageFrame({ pattern, city, renderedAt, children }: PageF
             className={item.slug === city.slug ? 'city city--active' : 'city'}
           >
             {item.name}
+            <small>{item.elevation} m</small>
           </a>
         ))}
       </nav>
 
-      <h2 className="city-title">{city.name}</h2>
+      <section className="profile">
+        <h2>{city.name}</h2>
+        <p>
+          {city.latitude.toFixed(2)}°, {city.longitude.toFixed(2)}° at {city.elevation} m,{' '}
+          {city.zone} zone
+        </p>
+      </section>
+
       {children}
       <MetricsPanel pattern={pattern} />
     </main>

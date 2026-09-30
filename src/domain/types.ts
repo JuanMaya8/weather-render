@@ -5,6 +5,8 @@ export interface City {
   name: string;
   latitude: number;
   longitude: number;
+  elevation: number;
+  zone: string;
 }
 
 export interface CurrentConditions {
